@@ -70,14 +70,14 @@ typings/
 # End of https://www.gitignore.io/api/node
 test/output/**
 
-dist/**
+
 
 # IDE config
 .idea
 
 .archive
 
-dist
+
 dump
 
 .DS_Store
