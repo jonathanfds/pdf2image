@@ -1,4 +1,5 @@
 import type { BufferResponse, ToBase64Response, WriteImageResponse } from './convertResponse';
+import { GmClassOptions } from './options';
 
 export type ResponseType = 'image' | 'base64' | 'buffer';
 export type ConvertOptions = {
@@ -22,5 +23,5 @@ export type Convert = {
 
   setOptions: () => void;
 
-  setGMClass: (gmClass: string | boolean) => void;
+  setGMClass: (gmClass: GmClassOptions) => void;
 };

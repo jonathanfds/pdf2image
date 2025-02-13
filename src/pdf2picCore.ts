@@ -2,7 +2,7 @@ import fs from 'fs';
 import { Graphics } from './graphics';
 import type { Convert, ConvertOptions } from './types/convert';
 import type { ConvertResponse } from './types/convertResponse';
-import type { Options } from './types/options';
+import type { Options, GmClassOptions } from './types/options';
 import { bufferToStream } from './utils/converters/bufferToStream';
 import { convertToBuffer } from './utils/converters/convertToBuffer';
 import { convertToStream } from './utils/converters/convertToStream';
@@ -58,7 +58,7 @@ export function pdf2picCore(source: string, data: string | Buffer, options = def
 
   convert.setOptions = (): void => setGMOptions(gm, options);
 
-  convert.setGMClass = (gmClass: string | boolean): void => {
+  convert.setGMClass = (gmClass: GmClassOptions): void => {
     gm.setGMClass(gmClass);
 
     return;

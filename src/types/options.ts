@@ -9,3 +9,8 @@ export type Options = {
   saveFilename?: string;
   compression?: string;
 };
+export type GmClassOptions = {
+  appPath?: string | undefined;
+  imageMagick?: string | boolean | undefined;
+  timeout?: string | number;
+};

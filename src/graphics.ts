@@ -2,7 +2,7 @@ import gm from 'gm';
 import path from 'path';
 import fs from 'fs';
 import { BufferResponse, ToBase64Response, WriteImageResponse } from './types/convertResponse';
-import { Options } from './types/options';
+import { Options, GmClassOptions } from './types/options';
 
 export class Graphics {
   private quality = 0;
@@ -171,22 +171,8 @@ export class Graphics {
 
     return this;
   }
-
-  public setGMClass(gmClass: string | boolean): Graphics {
-    if (typeof gmClass === 'boolean') {
-      this.gm = gm.subClass({ imageMagick: gmClass });
-
-      return this;
-    }
-
-    if (gmClass.toLocaleLowerCase() === 'imagemagick') {
-      this.gm = gm.subClass({ imageMagick: true });
-
-      return this;
-    }
-
-    this.gm = gm.subClass({ appPath: gmClass });
-
+  public setGMClass(gmOptions: GmClassOptions): Graphics {
+    this.gm = gm.subClass(gmOptions);
     return this;
   }
 
